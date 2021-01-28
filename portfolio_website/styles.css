@@ -120,6 +120,7 @@ a{
     font-size: 1.2rem;
     font-style: italic;
     font-weight: 300;
+    margin-bottom: 1rem;
 }
 
 .social-media{
@@ -167,21 +168,9 @@ section:not(.hero){
     display: flex;
     justify-content: center;
 }
-/*
-.name-heading{
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translateX(-50%, 50%);
-    font-size: 9vw;
-    font-family: var(--heading-font-family);
-    color: var(--dark-blue-color);
-    z-index: 1;
-    user-select: none;
-}*/
 
 .hero-person-image{
-    max-width: 95%;
+    max-width: 75%;
     user-select: none;
     -webkit-user-drag: none;
     margin-top: auto;
@@ -190,7 +179,7 @@ section:not(.hero){
 
 .scroll-down{
     position: absolute;
-    bottom: 5rem;
+    bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -256,3 +245,76 @@ section:not(.hero){
         opacity: 1;
     }
 }
+
+/*About styles*/
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.heading-group{
+    color: var(--dark-color);
+    margin-bottom: 5rem;
+}
+
+.section-head-small{
+    display: block;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #999;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.section-head-large{
+    font-size: 1.8rem;
+    font-family: var(--heading-font-family);
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+}
+
+.intro-description p:not(:last-child){
+    margin-bottom: 2rem;
+}
+
+.intro-description p span{
+    font-family: var(--heading-font-family);    
+    font-weight: bold;
+    color: var(--dark-color);
+    letter-spacing: 1px;
+}
+
+.call-to-action{
+    background-color: var(--yellow-color);
+    margin-top: 5rem;
+    padding: 3rem;
+    color: var(--dark-color);
+}
+
+.call-to-action p{
+    font-size: 2.4rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.btn{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1rem 3rem;
+    display: inline-block;
+    transition: background-color .5s;
+}
+
+.cta-btn{
+    color: var(--dark-color);
+    border: 1px solid var(--dark-color);
+}
+
+.cta-btn:hover{
+    color: var(--light-color);
+    background-color: var(--dark-color);
+}
+
+
