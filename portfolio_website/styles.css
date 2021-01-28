@@ -19,3 +19,240 @@
     --purple-color: #a84cb8;
     --dark-blue-color: #4054b2;
 }
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: var(--body-font-family);
+    color: var(--body-font-color);
+    font-size: var(--body-font-size);
+}
+
+a{
+    display: block;
+    text-decoration: none;
+}
+
+/*Navigation styles*/
+.hamburger-menu{
+    display: none;
+}
+
+.nav{
+    width: 26rem;
+    height: 100vh;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro{
+    font-family: var(--heading-font-family);
+    text-align: center;
+    margin: 5rem 0;
+    line-height: 1.5;
+}
+
+.intro-heading{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.intro-subhead{
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.nav-list{
+    list-style: none;
+}
+
+.nav-item{
+    position: relative;
+}
+
+.nav-item::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s cubic-bezier(.83, 0, 0.17, 1);
+}
+
+.nav-item:hover::before{
+    transform: scaleX(1);
+}
+
+.nav-item:not(:last-child){
+    border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.nav-link{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--light-color);
+    padding: 1rem;
+}
+
+.social-media-wrapper{
+    margin-top: auto;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.social-media-wrapper span{
+    display: block;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.social-media{
+    display: flex;
+    justify-content: center;
+}
+
+.sm-link{
+    font-size: 3.6rem;
+    color: var(--light-color);
+    transition: color .5s, transform .5s;
+}
+
+.sm-link:hover{
+    color: #999;
+    transform: translateY(-3px);
+}
+
+.sm-link:nth-child(1){
+    margin: 0 1rem;
+}
+
+.copyright-notice{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: rgba(255,255,255,.5);
+}
+
+/*Main style*/
+.main{
+    width: calc(100% - 26rem);
+    transform: translateX(26rem);
+}
+
+section:not(.hero){
+    padding: 5rem 0;
+}
+
+/*Hero styles*/
+.hero{
+    height: 100vh;
+    background: url("./images/hero_background.jpg") bottom center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+/*
+.name-heading{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%, 50%);
+    font-size: 9vw;
+    font-family: var(--heading-font-family);
+    color: var(--dark-blue-color);
+    z-index: 1;
+    user-select: none;
+}*/
+
+.hero-person-image{
+    max-width: 95%;
+    user-select: none;
+    -webkit-user-drag: none;
+    margin-top: auto;
+    position: relative;
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+}
+
+.mouse{
+    height: 5rem;
+    width: 2.5rem;
+    border: 2px solid var(--light-color);
+    border-radius: 2rem;
+    display: flex;
+}
+
+.mouse span{
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--light-color);
+    border-radius: 50%;
+    margin: auto;
+    animation: move-wheel 1s linear infinite;
+}
+
+.arrow span{
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-right: 2px solid var(--light-color);
+    border-bottom: 2px solid var(--light-color);
+    transform: rotate(45deg);
+    animation: arrow-down 1s linear infinite;
+
+}
+
+@keyframes move-wheel{
+    0%{
+        opacity: 1;
+        transform: translateY(-1rem);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+}
+
+@keyframes arrow-down{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: .25;
+    }
+    50%{
+        opacity: .5;
+    }
+    75%{
+        opacity: .75;
+    }
+    100%{
+        opacity: 1;
+    }
+}
